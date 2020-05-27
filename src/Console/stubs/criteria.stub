@@ -1,0 +1,27 @@
+<?php
+
+namespace $NAMESPACE$;
+
+use Jiaxincui\Repository\Contracts\CriteriaInterface;
+use Jiaxincui\Repository\Contracts\RepositoryInterface;
+
+/**
+ * Class $CLASSNAME$.
+ *
+ * @package $NAMESPACE$
+ */
+class $CLASSNAME$ implements CriteriaInterface
+{
+    /**
+     * Apply criteria in query repository
+     *
+     * @param string              $model
+     * @param RepositoryInterface $repository
+     *
+     * @return mixed
+     */
+    public function apply($model, RepositoryInterface $repository)
+    {
+        return $model;
+    }
+}

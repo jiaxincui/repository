@@ -1,0 +1,36 @@
+<?php
+
+namespace $NAMESPACE$;
+
+use Jiaxincui\Repository\Eloquent\Repository;
+use Jiaxincui\Repository\Criteria\RequestCriteria;
+use $INTERFACE_USE$;
+use $MODEL_USE$;
+
+/**
+ * Class $CLASSNAME$.
+ *
+ * @package $NAMESPACE$
+ */
+class $CLASSNAME$ extends Repository implements $INTERFACE$
+{
+
+    /**
+     * Specify Model class name
+     *
+     * @return string
+     */
+    public function model()
+    {
+        return $MODEL_CLASS$::class;
+    }
+
+    /**
+     * Boot up the repository, pushing criteria
+     */
+    public function boot()
+    {
+        $this->pushCriteria(app(RequestCriteria::class));
+    }
+
+}

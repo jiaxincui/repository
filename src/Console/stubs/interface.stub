@@ -1,0 +1,15 @@
+<?php
+
+namespace $NAMESPACE$;
+
+use Jiaxincui\Repository\Contracts\RepositoryInterface;
+
+/**
+ * Interface $CLASSNAME$.
+ *
+ * @package $NAMESPACE$
+ */
+interface $CLASSNAME$ extends RepositoryInterface
+{
+    //
+}

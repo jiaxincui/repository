@@ -1,0 +1,35 @@
+{
+    "name": "jiaxincui/repository",
+    "version": "0.1.0",
+    "description": "Repository for laravel",
+    "keywords": ["laravel", "repository"],
+    "type": "library",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "jiaxincui",
+            "email": "jenkincei@hotmail.com",
+            "role": "Developer"
+        }
+    ],
+    "support": {
+        "email": "jenkincei@hotmail.com"
+    },
+    "minimum-stability": "stable",
+    "require": {
+        "illuminate/database": "~5.0|~6.0|~7.0",
+        "illuminate/support": "~5.0|~6.0|~7.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "Jiaxincui\\Repository\\": "src/"
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Jiaxincui\\Repository\\RepositoryServiceProvider"
+            ]
+        }
+    }
+}
