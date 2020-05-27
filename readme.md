@@ -22,6 +22,8 @@ php artisan make:repository User --model="App\Models\User"
 php artisan make:criteria Example
 ```
 
+更多示例正在准备中...
+
 ## License
 
 [MIT](https://github.com/jiaxincui/repository/blob/master/LICENSE.md) © [JiaxinCui](https://github.com/jiaxincui)
