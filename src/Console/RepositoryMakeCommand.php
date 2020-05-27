@@ -23,13 +23,6 @@ class RepositoryMakeCommand extends Command
     protected $description = 'Create a new repository interface and class';
 
     /**
-     * The type of class being generated.
-     *
-     * @var string
-     */
-    protected $type = 'Repository';
-
-    /**
      * Create a new command instance.
      *
      * @return void
@@ -52,10 +45,10 @@ class RepositoryMakeCommand extends Command
         $bindings = new BindingsGenerator($this->argument('name'), $this->options());
         try {
             $interfaceGenerator->handle();
-            $this->info('RepositoryInterface Created!');
+            $this->info('RepositoryInterface Created successfully!');
 
             $eloquentGenerator->handle();
-            $this->info('RepositoryEloquent Created!');
+            $this->info('RepositoryEloquent Created successfully!');
 
         } catch (FileAlreadyExistsException $e) {
             $this->info($e->getMessage() . ' is already exists!');
@@ -66,7 +59,7 @@ class RepositoryMakeCommand extends Command
 
         try {
             $bindings->handle();
-            $this->info('Binding completed');
+            $this->info('Binding completed!');
         } catch (FileNotFoundException $e) {
             $this->info($e->getMessage() . ' The provider not found, Please run repository:install');
             return  false;

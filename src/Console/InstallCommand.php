@@ -46,6 +46,8 @@ class InstallCommand extends Command
     {
         Artisan::call('vendor:publish', ['--provider' => 'Jiaxincui\\Repository\\RepositoryServiceProvider']);
 
+        $this->info('config file copied successfully');
+
         $providerPath = $this->getProviderPath();
 
         if ($this->files->exists($providerPath)) {
@@ -55,6 +57,7 @@ class InstallCommand extends Command
             $provider = $this->files->get($providerPath);
             $provider = substr_replace($provider, Bindings::BIND_PLACEHOLDER, strpos($provider, '//', strpos($provider, 'register()')), 2);
             $this->files->put($providerPath, $provider);
+            $this->info('Provider "App\Providers\RepositoryServiceProvider" created successfully!');
         }
     }
 

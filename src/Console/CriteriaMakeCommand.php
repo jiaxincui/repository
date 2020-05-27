@@ -22,13 +22,6 @@ class CriteriaMakeCommand extends Command
     protected $description = 'Create a new criteria class';
 
     /**
-     * The type of class being generated.
-     *
-     * @var string
-     */
-    protected $type = 'Criteria';
-
-    /**
      * Create a new command instance.
      *
      * @return void
@@ -50,7 +43,7 @@ class CriteriaMakeCommand extends Command
         $criteriaGenerator = new CriteriaGenerator($this->argument('name'), $this->options());
         try {
             $criteriaGenerator->handle();
-            $this->info('Criteria class created!');
+            $this->info('Criteria class created successfully!');
         } catch (FileAlreadyExistsException $e) {
             $this->info($e->getMessage() . ' is already exists!');
             return false;
