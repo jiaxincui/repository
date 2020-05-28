@@ -88,7 +88,7 @@ abstract class Repository implements RepositoryInterface
      * @throws BindingResolutionException
      * @throws RepositoryException
      */
-    public function makeModel()
+    protected function makeModel()
     {
         $model = $this->app->make($this->model());
 
