@@ -1,6 +1,8 @@
 ## About
 
-适用于 Laravel 的 Repository 包， 参考了 [l5-repository](https://github.com/andersao/l5-repository).
+适用于 Laravel 的 Repository 包
+
+0.2版本进行了大量的改造，更贴近Eloquent。
 
 ## 安装
 
