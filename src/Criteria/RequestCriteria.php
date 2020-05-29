@@ -9,19 +9,6 @@ use Jiaxincui\Repository\Contracts\RepositoryInterface;
 /**
  * Class RequestCriteria.
  *
- * 对请求的查询字符串解析
- * 在一个请求参数里使用orWhere查询，不同的参数里使用where查询，相当于or和and
- * 如：?where=name:liming;email:like:liming;同一个weher内多个查询使用orWhere()
- * 如：?where[]=name:liming&where[]=email:like:liming，where数组此查询使用where()
- * 还可使用.查询关联
- * 如：?where=account.id_munber:like:611422 使用.分割为关联查询
- * 还可使用in,null,notIn,notNull,between,notBetween,like
- * 如：?where=name:like:lim;email:notnull
- * whereIn使用,分割（1,2,3将转换成whereIn数组参数）
- * 如:?where=id:in:1,2,3
- * slice如:?slice=10,2 从第10条开始取2条数据
- * orderBy如:?orderBy=user_id,desc
- *
  * @package namespace App\Repositories\Criteria;
  */
 class RequestCriteria implements CriteriaInterface
