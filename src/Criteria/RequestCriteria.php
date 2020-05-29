@@ -89,29 +89,29 @@ class RequestCriteria implements CriteriaInterface
         return $model;
     }
 
-    protected function parserWhere($data)
+    protected function parseWhere($data)
     {
-        $parser = [];
+        $result = [];
         foreach (explode(';', $data) as $v) {
             $item = explode(':', $v, 3);
             if (count($item) < 2 || !in_array($item[0], $this->queryable)) {
                 continue;
             }
             if (count($item) === 2 && !in_array(strtolower($item[1]), ['null', 'notnull'])) {
-                $parser[] = [$item[0], '=', $item[1]];
+                $result[] = [$item[0], '=', $item[1]];
             } else {
-                $parser[] = $item;
+                $result[] = $item;
             }
         }
-        return $parser;
+        return $result;
     }
 
     protected function applyWhere($model, $where)
     {
         return $model->where(function ($query) use ($where) {
-            $parserWhere = $this->parserWhere($where);
+            $parseWhere = $this->parseWhere($where);
             $first = true;
-            foreach ($parserWhere as $or) {
+            foreach ($parseWhere as $or) {
                 $relation = null;
                 $relation_field = null;
                 if(stripos($or[0], '.')) {
