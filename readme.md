@@ -2,7 +2,7 @@
 
 适用于 Laravel 的 Repository 包
 
-0.2版本进行了大量的改造，更贴近Eloquent。
+提供Criteria以及请求参数查询
 
 ## 安装
 
@@ -89,11 +89,12 @@ class UserRepositoryEloquent extends Repository implements UserRepository
 | between | whereBetween() | 数组元素使用`,`分割 | `/api/user?where=age:between:18,23`  |
 | notbetween | whereNotBetween() | 数组元素使用`,`分割 | `/api/user?where=age:notbetween:18,23` |
 | like | where() | 作为第二个参数传入 | `/api/user?where=name:like:zhang` |
-| <>= | | where() | 作为第二个参数传入 | `/api/user?where=age:>:18` |
+| <>= | where() | 作为第二个参数传入 | `/api/user?where=age:>:18` |
 
 同时还可以使用`whereHas()`方法,如：
 
-// 查询角色名称为 admin 的用户。
+查询角色名称为 admin 的用户。
+
 `/api/user?where=role.name:=:admin`
 
 #### 排序
@@ -106,14 +107,16 @@ class UserRepositoryEloquent extends Repository implements UserRepository
 
 使用`slice`作为请求参数的键
 
-// 从第2条开始取5条数据
+从第2条开始取5条数据
+
 `/api/user?where=age:>:18&slice=2,5`
 
 #### 关联查询
 
 使用`with`作为请求参数的键
 
-// 使用 , 分割多个关联
+使用 , 分割多个关联
+
 `/api/user?where=age:>:18&with=role,book`
 
 #### 软删除
@@ -121,10 +124,12 @@ class UserRepositoryEloquent extends Repository implements UserRepository
 使用 `trashed` 作为请求参数的键，可以应用软删除作用域
 如：
 
-// 仅列出已经软删除的项目
+仅列出已经软删除的项目
+
 `/api/user?trashed=only`
 
-// 包含软删除项目
+包含软删除项目
+
 `/api/user?trashed=with`
 
 
