@@ -3,7 +3,7 @@
 namespace $NAMESPACE$;
 
 use Jiaxincui\Repository\Eloquent\Repository;
-use Jiaxincui\Repository\Criteria\RequestCriteria;
+// use Jiaxincui\Repository\Criteria\RequestCriteria;
 use $INTERFACE_USE$;
 use $MODEL_USE$;
 
@@ -14,6 +14,15 @@ use $MODEL_USE$;
  */
 class $CLASSNAME$ extends Repository implements $INTERFACE$
 {
+    /**
+     * @var array
+     */
+    // protected $fieldsQueryable = [];
+
+    /**
+     * @var array
+     */
+    // protected $releasable = [];
 
     /**
      * Specify Model class name
@@ -30,7 +39,7 @@ class $CLASSNAME$ extends Repository implements $INTERFACE$
      */
     public function boot()
     {
-        $this->pushCriteria(app(RequestCriteria::class));
+        // $this->pushCriteria(app(RequestCriteria::class));
     }
 
 }
